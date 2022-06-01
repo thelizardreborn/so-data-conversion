@@ -19,7 +19,7 @@ SELECT
       LEFT(SUBSTRING_INDEX(TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1)), ' ', -1),1)
    ) AS 'initial',
    GENDER AS 'gender',
-   DOB AS 'birth_date',
+   DATE_FORMAT(DOB, '%m/%d/%Y') AS 'birth_date',
    D_ABBV AS 'team_code',
    DELEGATION AS 'team_name',
    AGE AS 'age',
