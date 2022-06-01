@@ -1,7 +1,7 @@
 -- ENTRANT_NA is in the format `LastName, FirstName MiddleName` possibly multiple names grouped as First Name (Smith, Mary Jane Ann)
 -- This structure complies with Hy-Tek semi-colon import format for idividual data records (except column headers will need removed)
 
-CREATE OR REPLACE VIEW `indiv` AS
+CREATE OR REPLACE VIEW `atheltes` AS
 SELECT
    'I' AS record_type,
    SUBSTRING_INDEX(ENTRANT_NA, ',', 1) AS 'last_name',
