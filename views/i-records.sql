@@ -3,7 +3,7 @@
 
 CREATE OR REPLACE VIEW `indiv` AS
 SELECT
-   'i' AS record_type,
+   'I' AS record_type,
    SUBSTRING_INDEX(ENTRANT_NA, ',', 1) AS 'last_name',
    IF (
       LOCATE(' ', TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1))) = 0,
@@ -40,4 +40,5 @@ SELECT
    '' AS 'email',
    '' AS 'disabled_classification'
 FROM Entries
+GROUP BY `BIB__`
 ;
