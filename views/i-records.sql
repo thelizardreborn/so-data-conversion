@@ -1,5 +1,5 @@
-# ENTRANT_NA is in the format `LastName, FirstName MiddleName` possibly multiple names grouped as First Name (Smith, Mary Jane Ann)
-# This structure complies with Hy-Tek semi-colon import format for idividual data records (except column headers will need removed)
+-- ENTRANT_NA is in the format `LastName, FirstName MiddleName` possibly multiple names grouped as First Name (Smith, Mary Jane Ann)
+-- This structure complies with Hy-Tek semi-colon import format for idividual data records (except column headers will need removed)
 
 CREATE OR REPLACE VIEW `indiv` AS
 SELECT
