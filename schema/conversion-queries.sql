@@ -1,5 +1,6 @@
 -- Add some fields that will be used for report views
 alter table Entries add EVENT_TYPE char;
+alter table Entries add EVENT_SHOR varchar(6) AFTER EVENT;
 alter table Entries add D_ABBV varchar(4) AFTER AGE_GROUP;
 alter table Entries add division INT;
 
