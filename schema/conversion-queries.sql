@@ -3,6 +3,8 @@ alter table Entries add EVENT_TYPE char;
 alter table Entries add EVENT_SHOR varchar(6) AFTER EVENT;
 alter table Entries add D_ABBV varchar(4) AFTER AGE_GROUP;
 alter table Entries add division INT;
+alter table `Entries` CHANGE `ENTRANT_NA` `NAME` varchar(40);
+alter table `Entries` CHANGE `BIB__` `BIB` int(11);
 
 -- Connect entry records to pre-built divisions
 update Entries E
