@@ -7,7 +7,7 @@ SELECT
   `E`.`GENDER` AS `gender`,
   MAX(`E`.`AGE`) AS `age`,
   `E`.`EVENT_SHOR` AS `event`,
-  CONCAT(TIME_FORMAT(SEC_TO_TIME(`E`.`QUALIFYING`),'%i:%s'),'.00') AS `seed`,
+  CONCAT(TIME_FORMAT(SEC_TO_TIME(FLOOR(`Entries`.`QUALIFYING`)),'%i:%s'),'.', LEFT(SUBSTRING_INDEX(`Entries`.`QUALIFYING`,'.',-(1)),2)) AS `seed`,
   'M' AS `measure`,
   `E`.`division` AS `division`,
   '' AS `finish`,
