@@ -9,7 +9,7 @@ SELECT
   `Entries`.`AGE` AS `age`,
   '' AS `schoolyear`,
   `Entries`.`EVENT_SHOR` AS `eventcode`,
-  CONCAT(TIME_FORMAT(SEC_TO_TIME(FLOOR(`Entries`.`QUALIFYING`)),'%i:%s'),'.', SUBSTRING_INDEX(`Entries`.`QUALIFYING`,'.',-(1))) AS `seed`,
+  CONCAT(TIME_FORMAT(SEC_TO_TIME(FLOOR(`Entries`.`QUALIFYING`)),'%i:%s'),'.', LEFT(SUBSTRING_INDEX(`Entries`.`QUALIFYING`,'.',-(1)),2)) AS `seed`,
   'M' AS `eventmeasure`,
   `Entries`.`division` AS `division`,
   `Entries`.`BIB` AS `bib`,
