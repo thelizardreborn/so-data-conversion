@@ -39,6 +39,7 @@ UPDATE Entries SET D_ABBV = 'BBJ ' Where D_ABBV = 'BART';
 UPDATE Entries SET D_ABBV = 'CLFL' Where D_ABBV = 'CLAR';
 UPDATE Entries SET D_ABBV = 'KNDA' Where D_ABBV = 'KNOX';
 UPDATE Entries SET D_ABBV = 'MAST' Where D_ABBV = 'MARS';
+UPDATE Entries SET D_ABBV = 'MGPK' Where D_ABBV = 'MONT';
 UPDATE Entries SET D_ABBV = 'ROD ' Where D_ABBV = 'RIPL';
 UPDATE Entries SET D_ABBV = 'STJO' Where D_ABBV = 'ST. ';
 
