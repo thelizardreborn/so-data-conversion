@@ -7,7 +7,7 @@ SELECT
   `E`.`GENDER` AS `gender`,
   MAX(`E`.`AGE`) AS `age`,
   `E`.`EVENT_SHOR` AS `event`,
-  CONCAT(TIME_FORMAT(SEC_TO_TIME(FLOOR(`Entries`.`QUALIFYING`)),'%i:%s'),'.', LEFT(SUBSTRING_INDEX(`Entries`.`QUALIFYING`,'.',-(1)),2)) AS `seed`,
+  CONCAT(TIME_FORMAT(SEC_TO_TIME(FLOOR(`E`.`QUALIFYING`)),'%i:%s'),'.', LEFT(SUBSTRING_INDEX(`E`.`QUALIFYING`,'.',-(1)),2)) AS `seed`,
   'M' AS `measure`,
   `E`.`division` AS `division`,
   '' AS `finish`,
@@ -26,4 +26,4 @@ SELECT
     `E`.`BIB` SEPARATOR ';') AS `Name_exp_16`
 FROM `Entries` `E`
 WHERE (`E`.`EVENT_TYPE` = 'Q')
-GROUP BY `E`.`FIN_DIV`,`E`.`TEAM`
+GROUP BY `E`.`QUALIFYING`,`E`.`TEAM`
