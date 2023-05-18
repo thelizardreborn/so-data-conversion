@@ -21,7 +21,8 @@ SELECT
   '' AS `o_phone`,
   '' AS `fax`,
   '' AS `shirt`,
-  `Entries`.`ENTRANT` AS `registration`,
+--  `Entries`.`ENTRANT` AS `registration`,
+  '' AS `registration`,
   `Entries`.`BIB` AS `bib`,
   '' AS `email`
 FROM `Entries`
