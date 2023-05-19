@@ -4,7 +4,7 @@ SELECT
   `E`.`D_ABBV` AS `teamcode`,
   `E`.`DELEGATION` AS `teamname`,
   'A' AS `letter`,
-  `E`.`GENDER` AS `gender`,
+  IF (COUNT(DISTINCT GENDER ) = 1, GENDER, 'X') AS `gender`,
   MAX(`E`.`AGE`) AS `age`,
   `E`.`EVENT_SHOR` AS `event`,
   CONCAT(TIME_FORMAT(SEC_TO_TIME(FLOOR(`E`.`QUALIFYING`)),'%i:%s'),'.', LEFT(SUBSTRING_INDEX(`E`.`QUALIFYING`,'.',-(1)),2)) AS `seed`,
