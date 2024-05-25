@@ -4,19 +4,19 @@
 CREATE OR REPLACE VIEW `athletes` AS
 SELECT
    'I' AS record_type,
-   SUBSTRING_INDEX(ENTRANT_NA, ',', 1) AS 'last_name',
+   SUBSTRING_INDEX(`NAME`, ',', 1) AS 'last_name',
    IF (
-      LOCATE(' ', TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1))) = 0,
-      TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1)), 
+      LOCATE(' ', TRIM(SUBSTRING_INDEX(`NAME`, ',', -1))) = 0,
+      TRIM(SUBSTRING_INDEX(`NAME`, ',', -1)), 
       LEFT(
-         TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1)), 
-         LENGTH(TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1))) - LENGTH(SUBSTRING_INDEX(TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1)),' ',-1))-1
+         TRIM(SUBSTRING_INDEX(`NAME`, ',', -1)), 
+         LENGTH(TRIM(SUBSTRING_INDEX(`NAME`, ',', -1))) - LENGTH(SUBSTRING_INDEX(TRIM(SUBSTRING_INDEX(`NAME`, ',', -1)),' ',-1))-1
       )
    ) AS 'first_name',
    IF (
-      LOCATE(' ', TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1))) = 0,
+      LOCATE(' ', TRIM(SUBSTRING_INDEX(`NAME`, ',', -1))) = 0,
       '',
-      LEFT(SUBSTRING_INDEX(TRIM(SUBSTRING_INDEX(ENTRANT_NA, ',', -1)), ' ', -1),1)
+      LEFT(SUBSTRING_INDEX(TRIM(SUBSTRING_INDEX(`NAME`, ',', -1)), ' ', -1),1)
    ) AS 'initial',
    GENDER AS 'gender',
    DATE_FORMAT(DOB, '%m/%d/%Y') AS 'birth_date',
@@ -36,9 +36,9 @@ SELECT
    '' AS 'fax',
    '' AS 'shirt_size',
    '' AS 'registration',
-   `BIB__` AS 'bib',
+   `BIB` AS 'bib',
    '' AS 'email',
    '' AS 'disabled_classification'
 FROM Entries
-GROUP BY `BIB__`
+GROUP BY `BIB`
 ;
