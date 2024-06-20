@@ -35,12 +35,12 @@ Divisioning depends on an external table - `so_divisions`. If you're not re-usin
 Some of the data needs converted to simplify generating data files that can be used downstream. Run the [conversion queries](schema/conversion-queries.sql)
 
 ### Exporting the Data
-If the views don't already exist, create the [athlete](views/i-records.sql), [entry](views/d-records.sql), and [relay](views/r-records.sql) views.
+If the views don't already exist, create the [athlete](views/2021/indiv_records.sql), [entry](views/2021/entry_records.sql), and [relay](views/2021/relay_records.sql) views.
 
 You can create simple SQL files on the database machine containing queries to select all the records from these views. Run these files into the database, and dump the results to a CSV file. For example:
 ```
-echo "SELECT * FROM athletes;" > athletes.sql
-mysql SO < athletes.sql > athletes.csv
+echo "SELECT * FROM indiv_records;" > indiv_records.sql
+mysql SO < indiv_records.sql > indiv_records.csv
 ```
 
 Use your favorite text editor to replace all occurances of TAB characters with semicolons (`;`) in each file. The resulting CSVs are ready to import.
