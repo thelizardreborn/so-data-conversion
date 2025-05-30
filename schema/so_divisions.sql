@@ -2,7 +2,8 @@ CREATE TABLE `so_divisions` (
   `division_num` int(11) NOT NULL,
   `level` varchar(30) DEFAULT NULL,
   `age_group` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`division_num`);
+  PRIMARY KEY (`division_num`)
+);
 
 insert into so_divisions (division_num, level, age_group) VALUES
 (1, 'Level 2', '  8- 11'),
